@@ -1,396 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpha and Omega Devotional</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A–Z with God</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Crimson+Text&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: 'Crimson Text', serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #16213e 75%, #1a1a2e 100%);
-            color: #f5f5dc;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
+    body {
+      font-family: 'Crimson Text', serif;
+      background: linear-gradient(to bottom, #1a1a2e, #0f3460, #1a1a2e);
+      color: #f5f5dc;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
 
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(26, 26, 46, 0.95);
+      backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 10px 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    }
 
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 3s infinite;
-        }
+    .nav-menu a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Cinzel', serif;
+      transition: color 0.3s ease;
+    }
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
+    .nav-menu a:hover {
+      color: #f7fafc;
+    }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 2;
-        }
+    h1, h2 {
+      font-family: 'Cinzel', serif;
+      text-align: center;
+      margin-top: 60px;
+    }
 
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
+    h1 {
+      font-size: 2.5rem;
+    }
 
-        .alpha-omega {
-            font-family: 'Cinzel', serif;
-            font-size: 4rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #ffd700, #ffed4a, #f7fafc, #ffd700);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: shimmer 4s ease-in-out infinite;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-            margin-bottom: 20px;
-            letter-spacing: 0.1em;
-        }
+    h2 {
+      margin-top: 2rem;
+      color: #ffc107;
+    }
 
-        @keyframes shimmer {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .title {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #e2e8f0;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            letter-spacing: 0.05em;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            color: #cbd5e0;
-            font-style: italic;
-            margin-bottom: 40px;
-            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .ornament {
-            width: 200px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #ffd700, transparent);
-            margin: 20px auto;
-            position: relative;
-        }
-
-        .ornament::before,
-        .ornament::after {
-            content: '❋';
-            position: absolute;
-            top: -10px;
-            color: #ffd700;
-            font-size: 1.2rem;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-
-        .ornament::before {
-            left: -20px;
-        }
-
-        .ornament::after {
-            right: -20px;
-        }
-
-        .meditations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .meditation-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        .meditation-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 215, 0, 0.4);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .meditation-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #ffd700, transparent, #ffd700);
-            border-radius: 15px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .meditation-card:hover::before {
-            opacity: 0.3;
-        }
-
-        .meditation-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #ffd700;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
-        }
-
-        .meditation-words {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .word {
-            font-size: 1.2rem;
-            color: #e2e8f0;
-            font-weight: 600;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .word:nth-child(1) { animation-delay: 0.1s; }
-        .word:nth-child(2) { animation-delay: 0.2s; }
-        .word:nth-child(3) { animation-delay: 0.3s; }
-        .word:nth-child(4) { animation-delay: 0.4s; }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .letter {
-            font-weight: 800;
-            color: #ffd700;
-            font-size: 1.3em;
-            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            border-top: 1px solid rgba(255, 215, 0, 0.2);
-        }
-
-        .footer-text {
-            font-size: 1.1rem;
-            color: #cbd5e0;
-            font-style: italic;
-        }
-
-        .decorative-border {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            border: 3px solid;
-            border-image: linear-gradient(45deg, #ffd700, transparent, #ffd700, transparent, #ffd700) 1;
-            z-index: 3;
-        }
-
-        @media (max-width: 768px) {
-            .alpha-omega {
-                font-size: 2.5rem;
-            }
-            
-            .title {
-                font-size: 1.8rem;
-            }
-            
-            .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .meditations-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+  </style>
 </head>
 <body>
-    <div class="stars"></div>
-    <div class="decorative-border"></div>
-    
-    <div class="container">
-        <div class="header">
-            <div class="alpha-omega">Α & Ω</div>
-            <h1 class="title">I am the Alpha and the Omega</h1>
-            <h2 class="subtitle">The Beginning and the End</h2>
-            <div class="ornament"></div>
-        </div>
+  <nav class="nav-menu">
+    <a href="#med1">Meditation 1</a>
+    <a href="#med2">Meditation 2</a>
+    <a href="#med3">Meditation 3</a>
+    <a href="#med4">Meditation 4</a>
+    <a href="#med5">Meditation 5</a>
+    <a href="#med6">Meditation 6</a>
+    <a href="#med7">Meditation 7</a>
+  </nav>
 
-        <div class="meditations-grid">
-            <div class="meditation-card">
-                <h3 class="meditation-title">Meditation 1</h3>
-                <div class="meditation-words">
-                    <div class="word"><span class="letter">A</span>bba</div>
-                    <div class="word"><span class="letter">B</span>lesses</div>
-                    <div class="word"><span class="letter">C</span>hildren</div>
-                    <div class="word"><span class="letter">D</span>aily</div>
-                </div>
-            </div>
+  <h1>A–Z with God</h1>
+  <p style="text-align:center;"><em>I am the Alpha (A) and the Omega (Z)<br>The Beginning and the End</em></p>
 
-            <div class="meditation-card">
-                <h3 class="meditation-title">Meditation 2</h3>
-                <div class="meditation-words">
-                    <div class="word"><span class="letter">E</span>verlasting</div>
-                    <div class="word"><span class="letter">F</span>ather</div>
-                    <div class="word"><span class="letter">G</span>ives</div>
-                    <div class="word"><span class="letter">H</span>ope</div>
-                </div>
-            </div>
+  <h2 id="med1">Meditation 1</h2>
+  <p><strong>Abba</strong></p>
+  <p><strong>Blesses</strong></p>
+  <p><strong>Children</strong></p>
+  <p><strong>Daily</strong></p>
 
-            <div class="meditation-card">
-                <h3 class="meditation-title">Meditation 3</h3>
-                <div class="meditation-words">
-                    <div class="word"><span class="letter">I</span>ndescribable</div>
-                    <div class="word"><span class="letter">J</span>oy</div>
-                    <div class="word"><span class="letter">K</span>ingdom</div>
-                </div>
-            </div>
+  <h2 id="med2">Meditation 2</h2>
+  <p><strong>Everlasting</strong></p>
+  <p><strong>Father</strong></p>
+  <p><strong>Gives</strong></p>
+  <p><strong>Hope</strong></p>
 
-            <div class="meditation-card">
-                <h3 class="meditation-title">Meditation 4</h3>
-                <div class="meditation-words">
-                    <div class="word"><span class="letter">L</span>ove</div>
-                    <div class="word"><span class="letter">M</span>oves</div>
-                    <div class="word"><span class="letter">O</span>ppositions</div>
-                </div>
-            </div>
+  <h2 id="med3">Meditation 3</h2>
+  <p><strong>Indescribable</strong></p>
+  <p><strong>Joy</strong></p>
+  <p><strong>Kingdom</strong></p>
 
-            <div class="meditation-card">
-                <h3 class="meditation-title">Meditation 5</h3>
-                <div class="meditation-words">
-                    <div class="word"><span class="letter">P</span>rayer</div>
-                    <div class="word"><span class="letter">Q</span>uells</div>
-                    <div class="word"><span class="letter">R</span>ipples</div>
-                    <div class="word"><span class="letter">S</span>torm</div>
-                </div>
-            </div>
+  <h2 id="med4">Meditation 4</h2>
+  <p><strong>Love</strong></p>
+  <p><strong>Moves</strong></p>
+  <p><strong>Oppositions</strong></p>
 
-            <div class="meditation-card">
-                <h3 class="meditation-title">Meditation 6</h3>
-                <div class="meditation-words">
-                    <div class="word"><span class="letter">T</span>ime</div>
-                    <div class="word"><span class="letter">U</span>nveils</div>
-                    <div class="word"><span class="letter">V</span>ictory</div>
-                </div>
-            </div>
+  <h2 id="med5">Meditation 5</h2>
+  <p><strong>Prayer</strong></p>
+  <p><strong>Quells</strong></p>
+  <p><strong>Ripples</strong></p>
+  <p><strong>Storm</strong></p>
 
-            <div class="meditation-card">
-                <h3 class="meditation-title">Meditation 7</h3>
-                <div class="meditation-words">
-                    <div class="word"><span class="letter">W</span>atch</div>
-                    <div class="word">e<span class="letter">X</span>citedly</div>
-                    <div class="word"><span class="letter">Y</span>eshua</div>
-                    <div class="word"><span class="letter">Z</span>ion</div>
-                </div>
-            </div>
-        </div>
+  <h2 id="med6">Meditation 6</h2>
+  <p><strong>Time</strong></p>
+  <p><strong>Unveils</strong></p>
+  <p><strong>Victory</strong></p>
 
-        <div class="footer">
-            <p class="footer-text">"He who testifies to these things says, 'Surely I am coming quickly.' Amen. Even so, come, Lord Jesus!" - Revelation 22:20</p>
-        </div>
-    </div>
-
-    <script>
-        // Create twinkling stars
-        function createStars() {
-            const starsContainer = document.querySelector('.stars');
-            const numberOfStars = 100;
-            
-            for (let i = 0; i < numberOfStars; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.width = Math.random() * 3 + 1 + 'px';
-                star.style.height = star.style.width;
-                star.style.animationDelay = Math.random() * 3 + 's';
-                star.style.animationDuration = (Math.random() * 2 + 2) + 's';
-                starsContainer.appendChild(star);
-            }
-        }
-
-        // Initialize stars when page loads
-        document.addEventListener('DOMContentLoaded', createStars);
-
-        // Add gentle scroll reveal animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe meditation cards
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.meditation-card');
-            cards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
-        });
-    </script>
+  <h2 id="med7">Meditation 7</h2>
+  <p><strong>Watch</strong></p>
+  <p><strong>eXcitedly</strong></p>
+  <p><strong>Yeshua</strong></p>
+  <p><strong>Zion</strong></p>
 </body>
 </html>
+
