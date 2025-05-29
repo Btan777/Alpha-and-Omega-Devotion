@@ -39,6 +39,7 @@
       font-weight: bold;
       font-family: 'Cinzel', serif;
       transition: color 0.3s ease;
+      margin: 0 10px; /* ✅ Added margin here */
     }
 
     .nav-menu a:hover {
@@ -65,9 +66,64 @@
       margin: 0.5rem 0;
     }
   </style>
-  .nav-menu a {
-  margin: 0 10px;
-}
+</head>
+
+
+    body {
+      font-family: 'Crimson Text', serif;
+      background: linear-gradient(to bottom, #1a1a2e, #0f3460, #1a1a2e);
+      color: #f5f5dc;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(26, 26, 46, 0.95);
+      backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 10px 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .nav-menu a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Cinzel', serif;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: #f7fafc;
+    }
+
+    h1, h2 {
+      font-family: 'Cinzel', serif;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      color: #ffc107;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+ 
 
 </head>
 <body>
