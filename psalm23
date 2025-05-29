@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psalm 23 - The Lord is My Shepherd</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #87CEEB 0%, #98FB98 50%, #F0E68C 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .title {
+            text-align: center;
+            color: #2F4F4F;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #556B2F;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            font-style: italic;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .verse-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: slideInLeft 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .verse-section:nth-child(even) {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .verse-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #32CD32, #228B22, #006400);
+        }
+
+        .verse-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #32CD32, #228B22);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .verse-text {
+            font-size: 1.3em;
+            line-height: 1.6;
+            color: #2F4F4F;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .imagery {
+            font-size: 1em;
+            color: #556B2F;
+            font-style: italic;
+            border-left: 4px solid #32CD32;
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+
+        .visual-elements {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .icon {
+            font-size: 3em;
+            margin: 10px;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .icon:nth-child(2) { animation-delay: -1s; }
+        .icon:nth-child(3) { animation-delay: -2s; }
+
+        .shepherd-scene {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(135, 206, 235, 0.3), rgba(152, 251, 152, 0.3));
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .shepherd-text {
+            font-size: 2.5em;
+            color: #2F4F4F;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .clouds {
+            position: absolute;
+            width: 100px;
+            height: 40px;
+            background: white;
+            border-radius: 40px;
+            opacity: 0.7;
+            animation: drift 20s linear infinite;
+        }
+
+        .cloud1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .cloud2 { top: 20%; right: 15%; animation-delay: -10s; }
+        .cloud3 { top: 15%; left: 60%; animation-delay: -5s; }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes drift {
+            from { transform: translateX(-150px); }
+            to { transform: translateX(calc(100vw + 150px)); }
+        }
+
+        @media (max-width: 768px) {
+            .title { font-size: 2em; }
+            .verse-text { font-size: 1.1em; }
+            .shepherd-text { font-size: 1.8em; }
+            .visual-elements { justify-content: center; }
+            .container { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="clouds cloud1"></div>
+    <div class="clouds cloud2"></div>
+    <div class="clouds cloud3"></div>
+
+    <div class="container">
+        <h1 class="title">Psalm 23</h1>
+        <p class="subtitle">The Lord is My Shepherd</p>
+
+        <div class="shepherd-scene">
+            <div class="shepherd-text">🐑 ✨ 🌿</div>
+            <p style="font-size: 1.2em; color: #556B2F; font-style: italic;">
+                "The Lord is my shepherd, I shall not want."
+            </p>
+        </div>
+
+        <div class="verse-section">
+            <div class="verse-number">1</div>
+            <div class="verse-text">
+                The Lord is my shepherd, I shall not want.
+            </div>
+            <div class="visual-elements">
+                <span class="icon">🐑</span>
+                <span class="icon">👨‍🌾</span>
+                <span class="icon">💝</span>
+            </div>
+            <div class="imagery">
+                God as our caring shepherd, providing for all our needs
+            </div>
+        </div>
+
+        <div class="verse-section">
+            <div class="verse-number">2</div>
+            <div class="verse-text">
+                He makes me lie down in green pastures,<br>
+                he leads me beside quiet waters,
+            </div>
+            <div class="visual-elements">
+                <span class="icon">🌿</span>
+                <span class="icon">🏞️</span>
+                <span class="icon">💧</span>
+            </div>
+            <div class="imagery">
+                Rest, peace, and refreshment in God's presence
+            </div>
+        </div>
+
+        <div class="verse-section">
+            <div class="verse-number">3</div>
+            <div class="verse-text">
+                he refreshes my soul.<br>
+                He guides me along the right paths<br>
+                for his name's sake.
+            </div>
+            <div class="visual-elements">
+                <span class="icon">✨</span>
+                <span class="icon">🛤️</span>
+                <span class="icon">🧭</span>
+            </div>
+            <div class="imagery">
+                Spiritual renewal and divine guidance on life's journey
+            </div>
+        </div>
+
+        <div class="verse-section">
+            <div class="verse-number">4</div>
+            <div class="verse-text">
+                Even though I walk through the darkest valley,<br>
+                I will fear no evil,<br>
+                for you are with me;<br>
+                your rod and your staff,<br>
+                they comfort me.
+            </div>
+            <div class="visual-elements">
+                <span class="icon">🌑</span>
+                <span class="icon">🛡️</span>
+                <span class="icon">🤝</span>
+            </div>
+            <div class="imagery">
+                Courage through trials, knowing God is always present
+            </div>
+        </div>
+
+        <div class="verse-section">
+            <div class="verse-number">5</div>
+            <div class="verse-text">
+                You prepare a table before me<br>
+                in the presence of my enemies.<br>
+                You anoint my head with oil;<br>
+                my cup overflows.
+            </div>
+            <div class="visual-elements">
+                <span class="icon">🍽️</span>
+                <span class="icon">👑</span>
+                <span class="icon">🏺</span>
+            </div>
+            <div class="imagery">
+                God's abundant provision and honor, even amid opposition
+            </div>
+        </div>
+
+        <div class="verse-section">
+            <div class="verse-number">6</div>
+            <div class="verse-text">
+                Surely your goodness and love will follow me<br>
+                all the days of my life,<br>
+                and I will dwell in the house of the Lord<br>
+                forever.
+            </div>
+            <div class="visual-elements">
+                <span class="icon">❤️</span>
+                <span class="icon">🏠</span>
+                <span class="icon">♾️</span>
+            </div>
+            <div class="imagery">
+                Eternal security and fellowship with God
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add gentle animation to verse sections as they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transform = 'translateX(0)';
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.verse-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add click interaction to icons for subtle bounce effect
+        document.querySelectorAll('.icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                this.style.transform = 'scale(1.2) translateY(-10px)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1) translateY(0)';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
