@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A–Z with God</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Crimson+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
@@ -14,9 +14,16 @@
       font-family: 'Crimson Text', serif;
       background: linear-gradient(to bottom, #1a1a2e, #0f3460, #1a1a2e);
       color: #f5f5dc;
+      padding: 0;
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
       padding: 2rem;
-      max-width: 800px;
-      margin: auto;
+      padding-top: 80px;
     }
 
     .nav-menu {
@@ -24,13 +31,15 @@
       top: 0;
       width: 100%;
       background: rgba(26, 26, 46, 0.95);
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 15px;
-      padding: 10px 0;
+      padding: 15px 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+      border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
     }
 
     .nav-menu a {
@@ -38,150 +47,419 @@
       text-decoration: none;
       font-weight: bold;
       font-family: 'Cinzel', serif;
-      transition: color 0.3s ease;
-      margin: 0 10px; /* ✅ Added margin here */
+      transition: all 0.3s ease;
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: 1px solid transparent;
     }
 
-    .nav-menu a:hover {
-      color: #f7fafc;
+    .nav-menu a:hover, .nav-menu a.active {
+      color: #1a1a2e;
+      background: linear-gradient(45deg, #ffd700, #ffed4e);
+      border: 1px solid #ffd700;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
     }
 
-    h1, h2 {
-      font-family: 'Cinzel', serif;
-      text-align: center;
-      margin-top: 60px;
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-family: 'Cinzel', serif;
+      text-align: center;
+      font-size: 3rem;
+      margin: 2rem 0;
+      background: linear-gradient(45deg, #ffd700, #ffed4e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .subtitle {
+      text-align: center;
+      font-style: italic;
+      font-size: 1.3rem;
+      margin-bottom: 3rem;
+      color: #e6d7b8;
+    }
+
+    .meditation-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .meditation-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #ffd700, #ffed4e, #ffd700);
+    }
+
+    .meditation-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+      border-color: rgba(255, 215, 0, 0.4);
+    }
+
+    .meditation-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .meditation-icon {
+      font-size: 3rem;
+      margin-right: 1rem;
+      background: linear-gradient(45deg, #ffd700, #ffed4e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     h2 {
-      margin-top: 2rem;
+      font-family: 'Cinzel', serif;
       color: #ffc107;
+      margin: 0;
+      font-size: 1.8rem;
     }
 
-    p {
+    .meditation-words {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .word-card {
+      background: rgba(255, 215, 0, 0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .word-card:hover {
+      background: rgba(255, 215, 0, 0.2);
+      transform: scale(1.05);
+    }
+
+    .word-card strong {
+      font-size: 1.3rem;
+      color: #ffd700;
+      font-weight: 600;
+    }
+
+    .psalm-content {
+      line-height: 1.8;
       font-size: 1.2rem;
-      margin: 0.5rem 0;
+    }
+
+    .psalm-verse {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: rgba(255, 215, 0, 0.05);
+      border-left: 4px solid #ffd700;
+      border-radius: 0 10px 10px 0;
+    }
+
+    .verse-number {
+      color: #ffd700;
+      font-weight: bold;
+      font-family: 'Cinzel', serif;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+        padding-top: 100px;
+      }
+      
+      .nav-menu {
+        padding: 10px 5px;
+      }
+      
+      .nav-menu a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .meditation-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .meditation-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+      }
     }
   </style>
 </head>
-
-
-    body {
-      font-family: 'Crimson Text', serif;
-      background: linear-gradient(to bottom, #1a1a2e, #0f3460, #1a1a2e);
-      color: #f5f5dc;
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .nav-menu {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(26, 26, 46, 0.95);
-      backdrop-filter: blur(6px);
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      padding: 10px 0;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-    }
-
-    .nav-menu a {
-      color: #ffd700;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: 'Cinzel', serif;
-      transition: color 0.3s ease;
-    }
-
-    .nav-menu a:hover {
-      color: #f7fafc;
-    }
-
-    h1, h2 {
-      font-family: 'Cinzel', serif;
-      text-align: center;
-      margin-top: 60px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    h2 {
-      margin-top: 2rem;
-      color: #ffc107;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
-    }
- 
-
-</head>
 <body>
-  
-<nav class="nav-menu">
-  <a href="#med1">Meditation 1</a>
-  <a href="#med2">Meditation 2</a>
-  <a href="#med3">Meditation 3</a>
-  <a href="#med4">Meditation 4</a>
-  <a href="#med5">Meditation 5</a>
-  <a href="#med6">Meditation 6</a>
-  <a href="#med7">Meditation 7</a>
-  <a href="psalm23.html">Psalm 23</a> <!-- ✅ this line -->
-</nav>
+  <nav class="nav-menu">
+    <a href="#" onclick="showTab('home')" class="active">Home</a>
+    <a href="#" onclick="showTab('med1')">Meditation 1</a>
+    <a href="#" onclick="showTab('med2')">Meditation 2</a>
+    <a href="#" onclick="showTab('med3')">Meditation 3</a>
+    <a href="#" onclick="showTab('med4')">Meditation 4</a>
+    <a href="#" onclick="showTab('med5')">Meditation 5</a>
+    <a href="#" onclick="showTab('med6')">Meditation 6</a>
+    <a href="#" onclick="showTab('med7')">Meditation 7</a>
+    <a href="#" onclick="showTab('psalm23')">Psalm 23</a>
+  </nav>
 
+  <div class="container">
+    <!-- Home Tab -->
+    <div id="home" class="tab-content active">
+      <h1>A–Z with God</h1>
+      <p class="subtitle"><em>I am the Alpha (A) and the Omega (Z)<br>The Beginning and the End</em></p>
+      
+      <div class="meditation-card">
+        <div class="meditation-header">
+          <div class="meditation-icon">🙏</div>
+          <div>
+            <h2>Welcome to Your Spiritual Journey</h2>
+          </div>
+        </div>
+        <p>Embark on a transformative journey through seven powerful meditations, each designed to deepen your connection with the Divine. From A to Z, discover the fullness of God's character and love.</p>
+        <p>Click on any meditation above to begin your spiritual exploration, or dive into the comforting words of Psalm 23.</p>
+      </div>
+    </div>
 
-  
-  <h1>A–Z with God</h1>
-  <p style="text-align:center;"><em>I am the Alpha (A) and the Omega (Z)<br>The Beginning and the End</em></p>
+    <!-- Meditation 1 -->
+    <div id="med1" class="tab-content">
+      <div class="meditation-card">
+        <div class="meditation-header">
+          <div class="meditation-icon">👨‍👧‍👦</div>
+          <div>
+            <h2>Meditation 1: Divine Family</h2>
+          </div>
+        </div>
+        <div class="meditation-words">
+          <div class="word-card"><strong>Abba</strong><br><em>Loving Father</em></div>
+          <div class="word-card"><strong>Blesses</strong><br><em>Divine Favor</em></div>
+          <div class="word-card"><strong>Children</strong><br><em>Beloved Ones</em></div>
+          <div class="word-card"><strong>Daily</strong><br><em>Every Moment</em></div>
+        </div>
+        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
+          "See what great love the Father has lavished on us, that we should be called children of God!" - 1 John 3:1
+        </p>
+      </div>
+    </div>
 
-  <h2 id="med1">Meditation 1</h2>
-  <p><strong>Abba</strong></p>
-  <p><strong>Blesses</strong></p>
-  <p><strong>Children</strong></p>
-  <p><strong>Daily</strong></p>
+    <!-- Meditation 2 -->
+    <div id="med2" class="tab-content">
+      <div class="meditation-card">
+        <div class="meditation-header">
+          <div class="meditation-icon">🌟</div>
+          <div>
+            <h2>Meditation 2: Eternal Hope</h2>
+          </div>
+        </div>
+        <div class="meditation-words">
+          <div class="word-card"><strong>Everlasting</strong><br><em>Without End</em></div>
+          <div class="word-card"><strong>Father</strong><br><em>Creator God</em></div>
+          <div class="word-card"><strong>Gives</strong><br><em>Gracious Gift</em></div>
+          <div class="word-card"><strong>Hope</strong><br><em>Living Promise</em></div>
+        </div>
+        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
+          "For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, to give you hope and a future." - Jeremiah 29:11
+        </p>
+      </div>
+    </div>
 
-  <h2 id="med2">Meditation 2</h2>
-  <p><strong>Everlasting</strong></p>
-  <p><strong>Father</strong></p>
-  <p><strong>Gives</strong></p>
-  <p><strong>Hope</strong></p>
+    <!-- Meditation 3 -->
+    <div id="med3" class="tab-content">
+      <div class="meditation-card">
+        <div class="meditation-header">
+          <div class="meditation-icon">👑</div>
+          <div>
+            <h2>Meditation 3: Divine Joy</h2>
+          </div>
+        </div>
+        <div class="meditation-words">
+          <div class="word-card"><strong>Indescribable</strong><br><em>Beyond Words</em></div>
+          <div class="word-card"><strong>Joy</strong><br><em>Pure Delight</em></div>
+          <div class="word-card"><strong>Kingdom</strong><br><em>God's Reign</em></div>
+        </div>
+        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
+          "Though you have not seen him, you love him; and even though you do not see him now, you believe in him and are filled with an inexpressible and glorious joy." - 1 Peter 1:8
+        </p>
+      </div>
+    </div>
 
-  <h2 id="med3">Meditation 3</h2>
-  <p><strong>Indescribable</strong></p>
-  <p><strong>Joy</strong></p>
-  <p><strong>Kingdom</strong></p>
+    <!-- Meditation 4 -->
+    <div id="med4" class="tab-content">
+      <div class="meditation-card">
+        <div class="meditation-header">
+          <div class="meditation-icon">💝</div>
+          <div>
+            <h2>Meditation 4: Conquering Love</h2>
+          </div>
+        </div>
+        <div class="meditation-words">
+          <div class="word-card"><strong>Love</strong><br><em>Divine Essence</em></div>
+          <div class="word-card"><strong>Moves</strong><br><em>Active Power</em></div>
+          <div class="word-card"><strong>Oppositions</strong><br><em>Every Obstacle</em></div>
+        </div>
+        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
+          "And now these three remain: faith, hope and love. But the greatest of these is love." - 1 Corinthians 13:13
+        </p>
+      </div>
+    </div>
 
-  <h2 id="med4">Meditation 4</h2>
-  <p><strong>Love</strong></p>
-  <p><strong>Moves</strong></p>
-  <p><strong>Oppositions</strong></p>
+    <!-- Meditation 5 -->
+    <div id="med5" class="tab-content">
+      <div class="meditation-card">
+        <div class="meditation-header">
+          <div class="meditation-icon">🌊</div>
+          <div>
+            <h2>Meditation 5: Peaceful Waters</h2>
+          </div>
+        </div>
+        <div class="meditation-words">
+          <div class="word-card"><strong>Prayer</strong><br><em>Sacred Communion</em></div>
+          <div class="word-card"><strong>Quells</strong><br><em>Calms Completely</em></div>
+          <div class="word-card"><strong>Ripples</strong><br><em>Life's Disturbances</em></div>
+          <div class="word-card"><strong>Storm</strong><br><em>Chaos & Turmoil</em></div>
+        </div>
+        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
+          "He got up, rebuked the wind and said to the waves, 'Quiet! Be still!' Then the wind died down and it was completely calm." - Mark 4:39
+        </p>
+      </div>
+    </div>
 
-  <h2 id="med5">Meditation 5</h2>
-  <p><strong>Prayer</strong></p>
-  <p><strong>Quells</strong></p>
-  <p><strong>Ripples</strong></p>
-  <p><strong>Storm</strong></p>
+    <!-- Meditation 6 -->
+    <div id="med6" class="tab-content">
+      <div class="meditation-card">
+        <div class="meditation-header">
+          <div class="meditation-icon">🏆</div>
+          <div>
+            <h2>Meditation 6: Divine Timing</h2>
+          </div>
+        </div>
+        <div class="meditation-words">
+          <div class="word-card"><strong>Time</strong><br><em>Perfect Moment</em></div>
+          <div class="word-card"><strong>Unveils</strong><br><em>Reveals Truth</em></div>
+          <div class="word-card"><strong>Victory</strong><br><em>Complete Triumph</em></div>
+        </div>
+        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
+          "To everything there is a season, and a time to every purpose under the heaven." - Ecclesiastes 3:1
+        </p>
+      </div>
+    </div>
 
-  <h2 id="med6">Meditation 6</h2>
-  <p><strong>Time</strong></p>
-  <p><strong>Unveils</strong></p>
-  <p><strong>Victory</strong></p>
+    <!-- Meditation 7 -->
+    <div id="med7" class="tab-content">
+      <div class="meditation-card">
+        <div class="meditation-header">
+          <div class="meditation-icon">✨</div>
+          <div>
+            <h2>Meditation 7: Glorious Return</h2>
+          </div>
+        </div>
+        <div class="meditation-words">
+          <div class="word-card"><strong>Watch</strong><br><em>Faithful Vigilance</em></div>
+          <div class="word-card"><strong>eXcitedly</strong><br><em>Joyful Anticipation</em></div>
+          <div class="word-card"><strong>Yeshua</strong><br><em>Jesus, Our Savior</em></div>
+          <div class="word-card"><strong>Zion</strong><br><em>Holy City</em></div>
+        </div>
+        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
+          "Look, he is coming with the clouds, and every eye will see him." - Revelation 1:7
+        </p>
+      </div>
+    </div>
 
-  <h2 id="med7">Meditation 7</h2>
-  <p><strong>Watch</strong></p>
-  <p><strong>eXcitedly</strong></p>
-  <p><strong>Yeshua</strong></p>
-  <p><strong>Zion</strong></p>
+    <!-- Psalm 23 -->
+    <div id="psalm23" class="tab-content">
+      <div class="meditation-card">
+        <div class="meditation-header">
+          <div class="meditation-icon">🐑</div>
+          <div>
+            <h2>Psalm 23: The Lord is My Shepherd</h2>
+          </div>
+        </div>
+        <div class="psalm-content">
+          <div class="psalm-verse">
+            <span class="verse-number">1</span> The Lord is my shepherd, I lack nothing.
+          </div>
+          <div class="psalm-verse">
+            <span class="verse-number">2</span> He makes me lie down in green pastures, he leads me beside quiet waters,
+          </div>
+          <div class="psalm-verse">
+            <span class="verse-number">3</span> he refreshes my soul. He guides me along the right paths for his name's sake.
+          </div>
+          <div class="psalm-verse">
+            <span class="verse-number">4</span> Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me.
+          </div>
+          <div class="psalm-verse">
+            <span class="verse-number">5</span> You prepare a table before me in the presence of my enemies. You anoint my head with oil; my cup overflows.
+          </div>
+          <div class="psalm-verse">
+            <span class="verse-number">6</span> Surely your goodness and love will follow me all the days of my life, and I will dwell in the house of the Lord forever.
+          </div>
+          
+          <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 215, 0, 0.1); border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
+            <h3 style="color: #ffd700; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">Reflection</h3>
+            <p style="font-style: italic; text-align: center;">
+              In this beloved psalm, we find comfort in knowing that God is our caring shepherd who provides, protects, and guides us through every season of life. His presence transforms our fears into faith, our valleys into victories, and our earthly journey into an eternal hope.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tabName) {
+      // Hide all tab contents
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+      
+      // Remove active class from all nav links
+      const navLinks = document.querySelectorAll('.nav-menu a');
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+      });
+      
+      // Show selected tab
+      document.getElementById(tabName).classList.add('active');
+      
+      // Add active class to clicked nav link
+      event.target.classList.add('active');
+      
+      // Scroll to top smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
-
