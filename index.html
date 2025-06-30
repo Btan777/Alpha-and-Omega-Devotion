@@ -191,10 +191,39 @@
       font-family: 'Cinzel', serif;
     }
 
+    .prayer-box {
+      margin: 2rem 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.1));
+      border: 2px solid rgba(255, 215, 0, 0.4);
+      border-radius: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prayer-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #ffd700, #ff8c00, #ffd700);
+    }
+
+    .prayer-text {
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #f5f5dc;
+      margin: 1rem 0;
+    }
+
     @media (max-width: 768px) {
       .container {
         padding: 1rem;
-        padding-top: 100px;
+        padding-top: 120px;
       }
       
       .nav-menu {
@@ -225,6 +254,8 @@
 <body>
   <nav class="nav-menu">
     <a href="#" onclick="showTab('home')" class="active">Home</a>
+    <a href="#" onclick="showTab('salvation')">Salvation Prayer</a>
+    <a href="#" onclick="showTab('holyspirit')">Holy Spirit</a>
     <a href="#" onclick="showTab('med1')">Meditation 1</a>
     <a href="#" onclick="showTab('med2')">Meditation 2</a>
     <a href="#" onclick="showTab('med3')">Meditation 3</a>
@@ -252,615 +283,226 @@
           </div>
         </div>
         <p>Embark on a transformative journey through seven powerful meditations, each designed to deepen your connection with the Divine. From A to Z, discover the fullness of God's character and love.</p>
-        <p>Click on any meditation above to begin your spiritual exploration, or dive into the comforting words of Psalm 23.</p>
+        <p>Begin with salvation and the baptism of the Holy Spirit, then explore the meditations and comforting words of Psalm 23.</p>
       </div>
     </div>
 
-    <!-- Meditation 1 -->
-    <div id="med1" class="tab-content">
+    <!-- Salvation Prayer -->
+    <div id="salvation" class="tab-content">
       <div class="meditation-card">
         <div class="meditation-header">
-          <div class="meditation-icon">👨‍👧‍👦</div>
+          <div class="meditation-icon">✝️</div>
           <div>
-            <h2>Meditation 1: Divine Family</h2>
-          </div>
-        </div>
-        <div class="meditation-words">
-          <div class="word-card"><strong>Abba</strong><br><em>Loving Father</em></div>
-          <div class="word-card"><strong>Blesses</strong><br><em>Divine Favor</em></div>
-          <div class="word-card"><strong>Children</strong><br><em>Beloved Ones</em></div>
-          <div class="word-card"><strong>Daily</strong><br><em>Every Moment</em></div>
-        </div>
-        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
-          "See what great love the Father has lavished on us, that we should be called children of God!" - 1 John 3:1
-        </p>
-      </div>
-    </div>
-
-    <!-- Meditation 2 -->
-    <div id="med2" class="tab-content">
-      <div class="meditation-card">
-        <div class="meditation-header">
-          <div class="meditation-icon">🌟</div>
-          <div>
-            <h2>Meditation 2: Eternal Hope</h2>
-          </div>
-        </div>
-        <div class="meditation-words">
-          <div class="word-card"><strong>Everlasting</strong><br><em>Without End</em></div>
-          <div class="word-card"><strong>Father</strong><br><em>Creator God</em></div>
-          <div class="word-card"><strong>Gives</strong><br><em>Gracious Gift</em></div>
-          <div class="word-card"><strong>Hope</strong><br><em>Living Promise</em></div>
-        </div>
-        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
-          "For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, to give you hope and a future." - Jeremiah 29:11
-        </p>
-      </div>
-    </div>
-
-    <!-- Meditation 3 -->
-    <div id="med3" class="tab-content">
-      <div class="meditation-card">
-        <div class="meditation-header">
-          <div class="meditation-icon">👑</div>
-          <div>
-            <h2>Meditation 3: Divine Joy</h2>
-          </div>
-        </div>
-        <div class="meditation-words">
-          <div class="word-card"><strong>Indescribable</strong><br><em>Beyond Words</em></div>
-          <div class="word-card"><strong>Joy</strong><br><em>Pure Delight</em></div>
-          <div class="word-card"><strong>Kingdom</strong><br><em>God's Reign</em></div>
-        </div>
-        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
-          "Though you have not seen him, you love him; and even though you do not see him now, you believe in him and are filled with an inexpressible and glorious joy." - 1 Peter 1:8
-        </p>
-      </div>
-    </div>
-
-    <!-- Meditation 4 -->
-    <div id="med4" class="tab-content">
-      <div class="meditation-card">
-        <div class="meditation-header">
-          <div class="meditation-icon">💝</div>
-          <div>
-            <h2>Meditation 4: Conquering Love</h2>
-          </div>
-        </div>
-        <div class="meditation-words">
-          <div class="word-card"><strong>Love</strong><br><em>Divine Essence</em></div>
-          <div class="word-card"><strong>Moves</strong><br><em>Active Power</em></div>
-          <div class="word-card"><strong>Oppositions</strong><br><em>Every Obstacle</em></div>
-        </div>
-        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
-          "And now these three remain: faith, hope and love. But the greatest of these is love." - 1 Corinthians 13:13
-        </p>
-      </div>
-    </div>
-
-    <!-- Meditation 5 -->
-    <div id="med5" class="tab-content">
-      <div class="meditation-card">
-        <div class="meditation-header">
-          <div class="meditation-icon">🌊</div>
-          <div>
-            <h2>Meditation 5: Peaceful Waters</h2>
-          </div>
-        </div>
-        <div class="meditation-words">
-          <div class="word-card"><strong>Prayer</strong><br><em>Sacred Communion</em></div>
-          <div class="word-card"><strong>Quells</strong><br><em>Calms Completely</em></div>
-          <div class="word-card"><strong>Ripples</strong><br><em>Life's Disturbances</em></div>
-          <div class="word-card"><strong>Storm</strong><br><em>Chaos & Turmoil</em></div>
-        </div>
-        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
-          "He got up, rebuked the wind and said to the waves, 'Quiet! Be still!' Then the wind died down and it was completely calm." - Mark 4:39
-        </p>
-      </div>
-    </div>
-
-    <!-- Meditation 6 -->
-    <div id="med6" class="tab-content">
-      <div class="meditation-card">
-        <div class="meditation-header">
-          <div class="meditation-icon">🏆</div>
-          <div>
-            <h2>Meditation 6: Divine Timing</h2>
-          </div>
-        </div>
-        <div class="meditation-words">
-          <div class="word-card"><strong>Time</strong><br><em>Perfect Moment</em></div>
-          <div class="word-card"><strong>Unveils</strong><br><em>Reveals Truth</em></div>
-          <div class="word-card"><strong>Victory</strong><br><em>Complete Triumph</em></div>
-        </div>
-        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
-          "To everything there is a season, and a time to every purpose under the heaven." - Ecclesiastes 3:1
-        </p>
-      </div>
-    </div>
-
-    <!-- Meditation 7 -->
-    <div id="med7" class="tab-content">
-      <div class="meditation-card">
-        <div class="meditation-header">
-          <div class="meditation-icon">✨</div>
-          <div>
-            <h2>Meditation 7: Glorious Return</h2>
-          </div>
-        </div>
-        <div class="meditation-words">
-          <div class="word-card"><strong>Watch</strong><br><em>Faithful Vigilance</em></div>
-          <div class="word-card"><strong>eXcitedly</strong><br><em>Joyful Anticipation</em></div>
-          <div class="word-card"><strong>Yeshua</strong><br><em>Jesus, Our Savior</em></div>
-          <div class="word-card"><strong>Zion</strong><br><em>Holy City</em></div>
-        </div>
-        <p style="margin-top: 2rem; font-style: italic; text-align: center;">
-          "Look, he is coming with the clouds, and every eye will see him." - Revelation 1:7
-        </p>
-      </div>
-    </div>
-
-    <!-- Psalm 23 -->
-    <div id="psalm23" class="tab-content">
-      <div class="meditation-card">
-        <div class="meditation-header">
-          <div class="meditation-icon">🐑</div>
-          <div>
-            <h2>Psalm 23: The Lord is My Shepherd</h2>
+            <h2>Salvation Prayer: Your New Beginning</h2>
           </div>
         </div>
         
-        <!-- Illustration Section -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; text-align: center;">
-          <div style="background: rgba(255, 215, 0, 0.1); padding: 1rem; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌿</div>
-            <strong style="color: #ffd700;">Green Pastures</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0;">Rest & Provision</p>
-          </div>
-          <div style="background: rgba(255, 215, 0, 0.1); padding: 1rem; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💧</div>
-            <strong style="color: #ffd700;">Still Waters</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0;">Peace & Refreshing</p>
-          </div>
-          <div style="background: rgba(255, 215, 0, 0.1); padding: 1rem; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🛤️</div>
-            <strong style="color: #ffd700;">Right Paths</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0;">Divine Guidance</p>
-          </div>
-          <div style="background: rgba(255, 215, 0, 0.1); padding: 1rem; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏔️</div>
-            <strong style="color: #ffd700;">Dark Valley</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0;">God's Presence</p>
-          </div>
-          <div style="background: rgba(255, 215, 0, 0.1); padding: 1rem; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🍽️</div>
-            <strong style="color: #ffd700;">Prepared Table</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0;">Victory Feast</p>
-          </div>
-          <div style="background: rgba(255, 215, 0, 0.1); padding: 1rem; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏠</div>
-            <strong style="color: #ffd700;">God's House</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0;">Eternal Home</p>
-          </div>
-        </div>
-        
-        <div class="psalm-content">
-          <div class="psalm-verse">
-            <span class="verse-number">1</span> The Lord is my shepherd, I lack nothing.
-          </div>
-          <div class="psalm-verse">
-            <span class="verse-number">2</span> He makes me lie down in green pastures, he leads me beside quiet waters,
-          </div>
-          <div class="psalm-verse">
-            <span class="verse-number">3</span> he refreshes my soul. He guides me along the right paths for his name's sake.
-          </div>
-          <div class="psalm-verse">
-            <span class="verse-number">4</span> Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me.
-          </div>
-          <div class="psalm-verse">
-            <span class="verse-number">5</span> You prepare a table before me in the presence of my enemies. You anoint my head with oil; my cup overflows.
-          </div>
-          <div class="psalm-verse">
-            <span class="verse-number">6</span> Surely your goodness and love will follow me all the days of my life, and I will dwell in the house of the Lord forever.
-          </div>
-          
-          <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 215, 0, 0.1); border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
-            <h3 style="color: #ffd700; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">Reflection</h3>
-            <p style="font-style: italic; text-align: center;">
-              In this beloved psalm, we find comfort in knowing that God is our caring shepherd who provides, protects, and guides us through every season of life. His presence transforms our fears into faith, our valleys into victories, and our earthly journey into an eternal hope.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Divine Healing -->
-    <div id="healing" class="tab-content">
-      <div class="meditation-card">
-        <div class="meditation-header">
-          <div class="meditation-icon">✨</div>
-          <div>
-            <h2>Divine Healing: By His Stripes We Are Healed</h2>
-          </div>
-        </div>
-        
-        <!-- Healing Illustrations -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 2rem 0; text-align: center;">
-          <div style="background: rgba(0, 255, 127, 0.1); padding: 1rem; border-radius: 15px; border: 1px solid rgba(0, 255, 127, 0.3);">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💚</div>
-            <strong style="color: #00ff7f;">Physical Healing</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0;">Body Restoration</p>
-          </div>
-          <div style="background: rgba(135, 206, 250, 0.1); padding: 1rem; border-radius: 15px; border: 1px solid rgba(135, 206, 250, 0.3);">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🧠</div>
-            <strong style="color: #87ceeb;">Mental Healing</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0;">Mind Renewal</p>
-          </div>
-          <div style="background: rgba(255, 182, 193, 0.1); padding: 1rem; border-radius: 15px; border: 1px solid rgba(255, 182, 193, 0.3);">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💖</div>
-            <strong style="color: #ffb6c1;">Emotional Healing</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0;">Heart Restoration</p>
-          </div>
-          <div style="background: rgba(221, 160, 221, 0.1); padding: 1rem; border-radius: 15px; border: 1px solid rgba(221, 160, 221, 0.3);">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🕊️</div>
-            <strong style="color: #dda0dd;">Spiritual Healing</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0;">Soul Cleansing</p>
-          </div>
-        </div>
-        
-        <div class="psalm-content">
-          <div class="psalm-verse">
-            <span class="verse-number">Psalm 103:2-3</span> <em>"Praise the Lord, my soul, and forget not all his benefits—who forgives all your sins and <strong style="color: #00ff7f;">heals all your diseases</strong>."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Isaiah 53:5</span> <em>"But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and <strong style="color: #00ff7f;">by his wounds we are healed</strong>."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">1 Peter 2:24</span> <em>"'He himself bore our sins' in his body on the cross, so that we might die to sins and live for righteousness; <strong style="color: #00ff7f;">'by his wounds you have been healed.'</strong>"</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Jeremiah 30:17</span> <em>"But I will restore you to health and <strong style="color: #00ff7f;">heal your wounds</strong>,' declares the Lord."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Exodus 15:26</span> <em>"If you listen carefully to the Lord your God and do what is right in his eyes... I will not bring on you any of the diseases I brought on the Egyptians, for <strong style="color: #00ff7f;">I am the Lord, who heals you</strong>."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Psalm 107:20</span> <em>"<strong style="color: #00ff7f;">He sent out his word and healed them</strong>; he rescued them from the grave."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">James 5:14-15</span> <em>"Is anyone among you sick? Let them call the elders of the church to pray over them and anoint them with oil in the name of the Lord. And <strong style="color: #00ff7f;">the prayer offered in faith will make the sick person well</strong>; the Lord will raise them up."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Matthew 8:17</span> <em>"This was to fulfill what was spoken through the prophet Isaiah: '<strong style="color: #00ff7f;">He took up our infirmities and bore our diseases</strong>.'"</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Psalm 147:3</span> <em>"<strong style="color: #00ff7f;">He heals the brokenhearted and binds up their wounds</strong>."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Malachi 4:2</span> <em>"But for you who revere my name, the sun of righteousness will rise <strong style="color: #00ff7f;">with healing in its rays</strong>. And you will go out and frolic like well-fed calves."</em>
-          </div>
-          
-          <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0, 255, 127, 0.1); border-radius: 15px; border: 1px solid rgba(0, 255, 127, 0.3);">
-            <h3 style="color: #00ff7f; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">Prayer for Healing</h3>
-            <p style="font-style: italic; text-align: center; color: #e6d7b8;">
-              "Heavenly Father, I come before You believing in Your power to heal. By the stripes of Jesus, I am healed. I speak healing over my body, mind, and spirit. Let Your healing light flow through every cell, every thought, and every emotion. I thank You for Your faithfulness and for the complete restoration You provide. In Jesus' mighty name, Amen."
-            </p>
-          </div>
-          
-          <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(255, 215, 0, 0.1); border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
-            <h3 style="color: #ffd700; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">Declaration of Faith</h3>
-            <p style="font-style: italic; text-align: center;">
-              "I am fearfully and wonderfully made. God's healing power flows through me right now. I am whole, healthy, and strong in the name of Jesus. Every cell in my body responds to the Word of God. I walk in divine health and supernatural strength."
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Prophecy Watch -->
-    <div id="prophecy" class="tab-content">
-      <div class="meditation-card">
-        <div class="meditation-header">
-          <div class="meditation-icon">👁️</div>
-          <div>
-            <h2>Prophecy Watch: The Watchman's Call</h2>
-          </div>
-        </div>
-        
-        <!-- Watchman Tower Illustration -->
-        <div style="text-align: center; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(25, 25, 112, 0.2), rgba(72, 61, 139, 0.2)); border-radius: 20px; border: 2px solid rgba(255, 215, 0, 0.3);">
-          <div style="font-size: 4rem; margin-bottom: 1rem;">🏰</div>
-          <div style="font-size: 3rem; margin-bottom: 1rem;">👤</div>
-          <h3 style="color: #ffd700; font-family: 'Cinzel', serif; margin-bottom: 1rem;">The Watchman on the Tower</h3>
-          <div style="font-style: italic; color: #e6d7b8; line-height: 1.6;">
-            <strong style="color: #ffd700;">Habakkuk 2:1</strong><br>
-            "I will stand at my watch and station myself on the ramparts;<br>
-            I will look to see what he will say to me,<br>
-            and what answer I am to give to this complaint."
-          </div>
-        </div>
-        
-        <!-- End Times Signs Illustrations -->
+        <!-- Salvation Steps Illustration -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
-          <div style="background: rgba(255, 69, 0, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 69, 0, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌍</div>
-            <strong style="color: #ff4500;">Earthquakes</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">In Various Places</p>
-            <small style="font-style: italic;">"There will be great earthquakes" - Luke 21:11</small>
-          </div>
           <div style="background: rgba(220, 20, 60, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(220, 20, 60, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⚔️</div>
-            <strong style="color: #dc143c;">Wars & Rumors</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Nation Against Nation</p>
-            <small style="font-style: italic;">"You will hear of wars" - Matthew 24:6</small>
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💔</div>
+            <strong style="color: #dc143c;">Recognize</strong>
+            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">We Are Sinners</p>
+            <small style="font-style: italic;">"All have sinned" - Romans 3:23</small>
           </div>
           <div style="background: rgba(255, 140, 0, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 140, 0, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌟</div>
-            <strong style="color: #ff8c00;">Signs in Heaven</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Celestial Wonders</p>
-            <small style="font-style: italic;">"Signs in the heavens" - Luke 21:11</small>
-          </div>
-          <div style="background: rgba(139, 69, 19, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(139, 69, 19, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌾</div>
-            <strong style="color: #8b4513;">Famines & Pestilence</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Food Shortages</p>
-            <small style="font-style: italic;">"Famines and pestilences" - Luke 21:11</small>
-          </div>
-          <div style="background: rgba(75, 0, 130, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(75, 0, 130, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💔</div>
-            <strong style="color: #4b0082;">Love Growing Cold</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Hearts Hardened</p>
-            <small style="font-style: italic;">"Love will grow cold" - Matthew 24:12</small>
-          </div>
-          <div style="background: rgba(255, 215, 0, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📖</div>
-            <strong style="color: #ffd700;">Gospel Preached</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">To All Nations</p>
-            <small style="font-style: italic;">"Gospel preached worldwide" - Matthew 24:14</small>
-          </div>
-        </div>
-        
-        <div class="psalm-content">
-          <div style="text-align: center; margin: 2rem 0; padding: 1.5rem; background: rgba(255, 215, 0, 0.1); border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
-            <h3 style="color: #ffd700; font-family: 'Cinzel', serif; margin-bottom: 1rem;">The Olivet Discourse - Jesus' Prophecy</h3>
-            <p style="font-style: italic; color: #e6d7b8;">
-              "As Jesus was sitting on the Mount of Olives, the disciples came to him privately. 'Tell us,' they said, 'when will this happen, and what will be the sign of your coming and of the end of the age?'"
-            </p>
-            <p style="font-style: italic; color: #e6d7b8; margin-top: 1rem;">
-              <strong style="color: #ffd700;">- Matthew 24:3</strong>
-            </p>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Matthew 24:6-8</span> <em>"You will hear of <strong style="color: #dc143c;">wars and rumors of wars</strong>, but see to it that you are not alarmed. Such things must happen, but the end is still to come. Nation will rise against nation, and kingdom against kingdom. There will be famines and <strong style="color: #ff4500;">earthquakes in various places</strong>. <strong style="color: #ffd700;">All these are the beginning of birth pains</strong>."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Luke 21:11</span> <em>"There will be <strong style="color: #ff4500;">great earthquakes</strong>, famines and pestilences in various places, and fearful events and <strong style="color: #ff8c00;">great signs from heaven</strong>."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">2 Timothy 3:1-4</span> <em>"But mark this: There will be terrible times in the last days. People will be lovers of themselves, lovers of money, boastful, proud, abusive, disobedient to their parents, ungrateful, unholy, without love, unforgiving, slanderous, without self-control, brutal, not lovers of the good, treacherous, rash, conceited, lovers of pleasure rather than lovers of God."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Daniel 12:4</span> <em>"But you, Daniel, roll up and seal the words of the scroll until the time of the end. <strong style="color: #ffd700;">Many will go here and there to increase knowledge</strong>."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Matthew 24:14</span> <em>"And <strong style="color: #ffd700;">this gospel of the kingdom will be preached in the whole world</strong> as a testimony to all nations, and then the end will come."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Isaiah 2:2</span> <em>"In the last days the mountain of the Lord's temple will be established as the highest of the mountains; it will be exalted above the hills, and <strong style="color: #ffd700;">all nations will stream to it</strong>."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Joel 2:28-29</span> <em>"And afterward, <strong style="color: #ffd700;">I will pour out my Spirit on all people</strong>. Your sons and daughters will prophesy, your old men will dream dreams, your young men will see visions. Even on my servants, both men and women, I will pour out my Spirit in those days."</em>
-          </div>
-          
-          <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(25, 25, 112, 0.1); border-radius: 15px; border: 1px solid rgba(72, 61, 139, 0.3);">
-            <h3 style="color: #4169e1; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">The Watchman's Call</h3>
-            <p style="font-style: italic; text-align: center; color: #e6d7b8;">
-              "Like the faithful watchman on the tower, we are called to be alert and discerning in these last days. We watch not in fear, but in faith, knowing that our redemption draws near. Let us be found ready when our Lord returns!"
-            </p>
-          </div>
-          
-          <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(255, 215, 0, 0.1); border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
-            <h3 style="color: #ffd700; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">Prayer for the Watching Church</h3>
-            <p style="font-style: italic; text-align: center;">
-              "Father, give us eyes to see the signs of the times and hearts that are prepared for Your return. Help us to be faithful watchmen, proclaiming Your gospel to all nations while we await the blessed hope of Jesus Christ's glorious appearing. Even so, come quickly, Lord Jesus! Amen."
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Evangelism -->
-    <div id="evangelism" class="tab-content">
-      <div class="meditation-card">
-        <div class="meditation-header">
-          <div class="meditation-icon">🎣</div>
-          <div>
-            <h2>Evangelism: Fishers of Men & The Great Commission</h2>
-          </div>
-        </div>
-        
-        <!-- Great Commission Illustration -->
-        <div style="text-align: center; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(0, 100, 200, 0.2), rgba(30, 144, 255, 0.2)); border-radius: 20px; border: 2px solid rgba(255, 215, 0, 0.3);">
-          <div style="font-size: 4rem; margin-bottom: 1rem;">🌍</div>
-          <div style="font-size: 3rem; margin-bottom: 1rem;">✝️</div>
-          <h3 style="color: #ffd700; font-family: 'Cinzel', serif; margin-bottom: 1rem;">The Great Commission</h3>
-          <div style="font-style: italic; color: #e6d7b8; line-height: 1.6;">
-            <strong style="color: #ffd700;">Matthew 28:18-20</strong><br>
-            "All authority in heaven and on earth has been given to me.<br>
-            Therefore go and make disciples of all nations,<br>
-            baptizing them in the name of the Father and of the Son and of the Holy Spirit,<br>
-            and teaching them to obey everything I have commanded you.<br>
-            And surely I am with you always, to the very end of the age."
-          </div>
-        </div>
-        
-        <!-- Fishers of Men & Noah's Ark Illustrations -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
-          <!-- Fishers of Men -->
-          <div style="background: rgba(0, 191, 255, 0.1); padding: 2rem; border-radius: 20px; border: 2px solid rgba(0, 191, 255, 0.3); text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🐟</div>
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎣</div>
-            <h3 style="color: #00bfff; font-family: 'Cinzel', serif; margin-bottom: 1rem;">Fishers of Men</h3>
-            <div style="font-style: italic; color: #e6d7b8; line-height: 1.6; margin-bottom: 1rem;">
-              <strong style="color: #00bfff;">Matthew 4:19</strong><br>
-              "Follow me, and I will make you fishers of men."
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 0.5rem; margin-top: 1rem;">
-              <div style="font-size: 1.5rem;">🌊</div>
-              <div style="font-size: 1.5rem;">🚤</div>
-              <div style="font-size: 1.5rem;">🪝</div>
-              <div style="font-size: 1.5rem;">🐠</div>
-            </div>
-            <p style="font-size: 0.9rem; margin-top: 1rem; color: #e6d7b8;">
-              Cast your nets into the deep waters of humanity
-            </p>
-          </div>
-          
-          <!-- Noah's Ark -->
-          <div style="background: rgba(139, 69, 19, 0.1); padding: 2rem; border-radius: 20px; border: 2px solid rgba(139, 69, 19, 0.3); text-align: center;">
-            <div style="font-size: 4rem; margin-bottom: 1rem;">🚢</div>
-            <div style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1rem;">
-              <div style="font-size: 1.5rem;">🦁</div>
-              <div style="font-size: 1.5rem;">🐘</div>
-              <div style="font-size: 1.5rem;">🦒</div>
-              <div style="font-size: 1.5rem;">🐦</div>
-            </div>
-            <h3 style="color: #8b4513; font-family: 'Cinzel', serif; margin-bottom: 1rem;">Build the Ark</h3>
-            <div style="font-style: italic; color: #e6d7b8; line-height: 1.6; margin-bottom: 1rem;">
-              <strong style="color: #8b4513;">Luke 17:26-27</strong><br>
-              "Just as it was in the days of Noah,<br>
-              so also will it be in the days of the Son of Man."
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 0.5rem; margin-top: 1rem;">
-              <div style="font-size: 1.5rem;">🔨</div>
-              <div style="font-size: 1.5rem;">🪵</div>
-              <div style="font-size: 1.5rem;">⛈️</div>
-              <div style="font-size: 1.5rem;">🕊️</div>
-            </div>
-            <p style="font-size: 0.9rem; margin-top: 1rem; color: #e6d7b8;">
-              Prepare the way for salvation before the storm
-            </p>
-          </div>
-        </div>
-        
-        <!-- Evangelism Methods Illustrations -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
-          <div style="background: rgba(255, 165, 0, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 165, 0, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💬</div>
-            <strong style="color: #ffa500;">Personal Witness</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Share Your Story</p>
-            <small style="font-style: italic;">"Always be prepared to give an answer" - 1 Peter 3:15</small>
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💰</div>
+            <strong style="color: #ff8c00;">Understand</strong>
+            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Sin's Price</p>
+            <small style="font-style: italic;">"Wages of sin is death" - Romans 6:23</small>
           </div>
           <div style="background: rgba(50, 205, 50, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(50, 205, 50, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🤝</div>
-            <strong style="color: #32cd32;">Acts of Service</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Love in Action</p>
-            <small style="font-style: italic;">"Faith without works is dead" - James 2:26</small>
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">❤️</div>
+            <strong style="color: #32cd32;">Believe</strong>
+            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">God's Love</p>
+            <small style="font-style: italic;">"God so loved the world" - John 3:16</small>
           </div>
           <div style="background: rgba(138, 43, 226, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(138, 43, 226, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📖</div>
-            <strong style="color: #8a2be2;">Scripture Sharing</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Word of Life</p>
-            <small style="font-style: italic;">"Faith comes by hearing" - Romans 10:17</small>
-          </div>
-          <div style="background: rgba(255, 20, 147, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 20, 147, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🙏</div>
-            <strong style="color: #ff1493;">Intercessory Prayer</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Spiritual Warfare</p>
-            <small style="font-style: italic;">"Pray for those who persecute you" - Matthew 5:44</small>
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🙌</div>
+            <strong style="color: #8a2be2;">Receive</strong>
+            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Jesus Christ</p>
+            <small style="font-style: italic;">"Whoever calls on the Lord" - Romans 10:13</small>
           </div>
         </div>
         
         <div class="psalm-content">
           <div class="psalm-verse">
-            <span class="verse-number">Matthew 28:18-20</span> <em>"Then Jesus came to them and said, '<strong style="color: #ffd700;">All authority in heaven and on earth has been given to me</strong>. Therefore <strong style="color: #00bfff;">go and make disciples of all nations</strong>, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and <strong style="color: #32cd32;">teaching them to obey everything I have commanded you</strong>. And surely <strong style="color: #ffd700;">I am with you always, to the very end of the age</strong>.'"</em>
+            <span class="verse-number">Romans 3:23</span> <em>"For <strong style="color: #dc143c;">all have sinned and fall short of the glory of God</strong>."</em>
           </div>
           
           <div class="psalm-verse">
-            <span class="verse-number">Matthew 4:19</span> <em>"'Come, follow me,' Jesus said, 'and <strong style="color: #00bfff;">I will send you out to fish for people</strong>.'"</em>
+            <span class="verse-number">Romans 6:23</span> <em>"For <strong style="color: #ff8c00;">the wages of sin is death</strong>, but <strong style="color: #32cd32;">the gift of God is eternal life in Christ Jesus our Lord</strong>."</em>
           </div>
           
           <div class="psalm-verse">
-            <span class="verse-number">Acts 1:8</span> <em>"But you will receive power when the Holy Spirit comes on you; and <strong style="color: #ffd700;">you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth</strong>."</em>
+            <span class="verse-number">John 3:16</span> <em>"For <strong style="color: #32cd32;">God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life</strong>."</em>
           </div>
           
           <div class="psalm-verse">
-            <span class="verse-number">Luke 17:26-27</span> <em>"<strong style="color: #8b4513;">Just as it was in the days of Noah, so also will it be in the days of the Son of Man</strong>. People were eating, drinking, marrying and being given in marriage up to the day Noah entered the ark. Then the flood came and destroyed them all."</em>
+            <span class="verse-number">Romans 10:9-10</span> <em>"If you declare with your mouth, '<strong style="color: #8a2be2;">Jesus is Lord</strong>,' and <strong style="color: #32cd32;">believe in your heart that God raised him from the dead, you will be saved</strong>. For it is with your heart that you believe and are justified, and it is with your mouth that you profess your faith and are saved."</em>
           </div>
           
           <div class="psalm-verse">
-            <span class="verse-number">2 Peter 3:9</span> <em>"The Lord is not slow in keeping his promise, as some understand slowness. Instead <strong style="color: #32cd32;">he is patient with you, not wanting anyone to perish, but everyone to come to repentance</strong>."</em>
+            <span class="verse-number">Romans 10:13</span> <em>"For <strong style="color: #ffd700;">'everyone who calls on the name of the Lord will be saved.'</strong>"</em>
           </div>
           
           <div class="psalm-verse">
-            <span class="verse-number">Romans 10:14-15</span> <em>"How, then, can they call on the one they have not believed in? And how can they believe in the one of whom they have not heard? And how can they hear without someone preaching to them? And <strong style="color: #ffa500;">how can anyone preach unless they are sent? As it is written: 'How beautiful are the feet of those who bring good news!'</strong>"</em>
+            <span class="verse-number">2 Corinthians 5:17</span> <em>"Therefore, if anyone is in Christ, <strong style="color: #32cd32;">the new creation has come: The old has gone, the new is here!</strong>"</em>
           </div>
           
-          <div class="psalm-verse">
-            <span class="verse-number">Mark 16:15</span> <em>"He said to them, '<strong style="color: #00bfff;">Go into all the world and preach the gospel to all creation</strong>.'"</em>
+          <div class="prayer-box">
+            <h3 style="color: #ffd700; font-family: 'Cinzel', serif; margin-bottom: 1rem;">The Sinner's Prayer</h3>
+            <div class="prayer-text">
+              "Dear Heavenly Father,<br><br>
+              I know that I am a sinner and I need Your forgiveness. I believe that Jesus Christ died on the cross for my sins and rose again from the dead. I repent of my sins and ask You to forgive me.<br><br>
+              Right now, I invite Jesus Christ to come into my heart and life as my personal Lord and Savior. I surrender my life to You and ask You to take control.<br><br>
+              Thank You for loving me, forgiving me, and giving me eternal life. Help me to live for You from this day forward.<br><br>
+              In Jesus' precious name I pray, Amen."
+            </div>
           </div>
           
-          <div class="psalm-verse">
-            <span class="verse-number">1 Peter 3:15</span> <em>"But in your hearts revere Christ as Lord. <strong style="color: #ffa500;">Always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have</strong>. But do this with gentleness and respect."</em>
-          </div>
-          
-          <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0, 100, 200, 0.1); border-radius: 15px; border: 1px solid rgba(30, 144, 255, 0.3);">
-            <h3 style="color: #1e90ff; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">The Evangelistic Heart</h3>
-            <p style="font-style: italic; text-align: center; color: #e6d7b8;">
-              "Like Noah who built an ark to save his family from the flood, we are called to build bridges of salvation for a lost world. As fishers of men, we cast our nets wide with love, patience, and the power of the Holy Spirit. Every soul we reach is precious to God, and every effort we make in His name will not return empty."
-            </p>
-          </div>
-          
-          <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(255, 215, 0, 0.1); border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
-            <h3 style="color: #ffd700; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">Prayer for Evangelistic Boldness</h3>
-            <p style="font-style: italic; text-align: center;">
-              "Lord Jesus, You have given us the Great Commission to go and make disciples of all nations. Give us boldness like Peter and Paul, wisdom like Solomon, and love like You. Help us to be faithful fishers of men, casting our nets with patience and joy. Use us to build Your kingdom and prepare hearts for Your return. In Your mighty name, Amen."
-            </p>
+          <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(32, 178, 170, 0.1); border-radius: 15px; border: 1px solid rgba(32, 178, 170, 0.3);">
+            <h3 style="color: #20b2aa; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">What Happens When You Accept Jesus?</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🕊️</div>
+                <strong style="color: #20b2aa;">Born Again</strong>
+                <p style="font-size: 0.9rem; margin: 0.5rem 0;">You become a new creation</p>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">👑</div>
+                <strong style="color: #20b2aa;">Child of God</strong>
+                <p style="font-size: 0.9rem; margin: 0.5rem 0;">Adopted into God's family</p>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">∞</div>
+                <strong style="color: #20b2aa;">Eternal Life</strong>
+                <p style="font-size: 0.9rem; margin: 0.5rem 0;">Promise of heaven</p>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🛡️</div>
+                <strong style="color: #20b2aa;">Forgiveness</strong>
+                <p style="font-size: 0.9rem; margin: 0.5rem 0;">All sins washed away</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script>
-    function showTab(tabName) {
-      // Hide all tab contents
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => {
-        tab.classList.remove('active');
-      });
-      
-      // Remove active class from all nav links
-      const navLinks = document.querySelectorAll('.nav-menu a');
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-      });
-      
-      // Show selected tab
-      document.getElementById(tabName).classList.add('active');
-      
-      // Add active class to clicked nav link
-      event.target.classList.add('active');
-      
-      // Scroll to top smoothly
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
-</body>
-</html>
+    <!-- Baptism of the Holy Spirit -->
+    <div id="holyspirit" class="tab-content">
+      <div class="meditation-card">
+        <div class="meditation-header">
+          <div class="meditation-icon">🔥</div>
+          <div>
+            <h2>Baptism of the Holy Spirit: Power from on High</h2>
+          </div>
+        </div>
+        
+        <!-- Holy Spirit Fire Illustration -->
+        <div style="text-align: center; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(255, 69, 0, 0.2), rgba(255, 140, 0, 0.2)); border-radius: 20px; border: 2px solid rgba(255, 140, 0, 0.5);">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">🔥</div>
+          <div style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1rem;">
+            <div style="font-size: 2rem;">🕊️</div>
+            <div style="font-size: 2rem;">💨</div>
+            <div style="font-size: 2rem;">⚡</div>
+          </div>
+          <h3 style="color: #ff8c00; font-family: 'Cinzel', serif; margin-bottom: 1rem;">Tongues of Fire</h3>
+          <div style="font-style: italic; color: #e6d7b8; line-height: 1.6;">
+            <strong style="color: #ff8c00;">Acts 2:3-4</strong><br>
+            "They saw what seemed to be tongues of fire that separated<br>
+            and came to rest on each of them.<br>
+            All of them were filled with the Holy Spirit and began to speak<br>
+            in other tongues as the Spirit enabled them."
+          </div>
+        </div>
+        
+        <!-- Gifts of the Spirit Illustrations -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 2rem 0;">
+          <div style="background: rgba(255, 215, 0, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3); text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🗣️</div>
+            <strong style="color: #ffd700;">Speaking in Tongues</strong>
+            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Prayer Language</p>
+          </div>
+          <div style="background: rgba(138, 43, 226, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(138, 43, 226, 0.3); text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔮</div>
+            <strong style="color: #8a2be2;">Prophecy</strong>
+            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Divine Messages</p>
+          </div>
+          <div style="background: rgba(50, 205, 50, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(50, 205, 50, 0.3); text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⚡</div>
+            <strong style="color: #32cd32;">Divine Power</strong>
+            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Supernatural Ability</p>
+          </div>
+          <div style="background: rgba(255, 20, 147, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 20, 147, 0.3); text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🤲</div>
+            <strong style="color: #ff1493;">Healing</strong>
+            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Miraculous Recovery</p>
+          </div>
+          <div style="background: rgba(30, 144, 255, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(30, 144, 255, 0.3); text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">👁️</div>
+            <strong style="color: #1e90ff;">Discernment</strong>
+            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Spiritual Insight</p>
+          </div>
+          <div style="background: rgba(255, 140, 0, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 140, 0, 0.3); text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💪</div>
+            <strong style="color: #ff8c00;">Boldness</strong>
+            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Fearless Witness</p>
+          </div>
+        </div>
+        
+        <div class="psalm-content">
+          <div class="psalm-verse">
+            <span class="verse-number">Acts 1:8</span> <em>"But you will receive <strong style="color: #ff8c00;">power when the Holy Spirit comes on you</strong>; and you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth."</em>
+          </div>
+          
+          <div class="psalm-verse">
+            <span class="verse-number">Acts 2:38-39</span> <em>"Peter replied, 'Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins. And <strong style="color: #ffd700;">you will receive the gift of the Holy Spirit</strong>. <strong style="color: #32cd32;">The promise is for you and your children and for all who are far off</strong>—for all whom the Lord our God will call.'"</em>
+          </div>
+          
+          <div class="psalm-verse">
+            <span class="verse-number">Luke 11:13</span> <em>"If you then, though you are evil, know how to give good gifts to your children, <strong style="color: #ffd700;">how much more will your Father in heaven give the Holy Spirit to those who ask him!</strong>"</em>
+          </div>
+          
+          <div class="psalm-verse">
+            <span class="verse-number">1 Corinthians 12:7-11</span> <em>"Now to each one <strong style="color: #8a2be2;">the manifestation of the Spirit is given for the common good</strong>. To one there is given through the Spirit a message of wisdom, to another a message of knowledge... to another speaking in different kinds of tongues, and to still another the interpretation of tongues. <strong style="color: #ff8c00;">All these are the work of one and the same Spirit</strong>."</em>
+          </div>
+          
+          <div class="psalm-verse">
+            <span class="verse-number">Acts 19:2-6</span> <em>"He asked them, 'Did you receive the Holy Spirit when you believed?' They answered, 'No, we have not even heard that there is a Holy Spirit.'... <strong style="color: #ffd700;">When Paul placed his hands on them, the Holy Spirit came on them, and they spoke in tongues and prophesied</strong>."</em>
+          </div>
+          
+          <div class="psalm-verse">
+            <span class="verse-number">Romans 8:26</span> <em>"In the same way, <strong style="color: #ffd700;">the Spirit helps us in our weakness. We do not know what we ought to pray for, but the Spirit himself intercedes for us through wordless groans</strong>."</em>
+          </div>
+          
+          <div class="psalm-verse">
+            <span class="verse-number">Ephesians 6:18</span> <em>"And <strong style="color: #ffd700;">pray in the Spirit on all occasions with all kinds of prayers and requests</strong>. With this in mind, be alert and always keep on praying for all the Lord's people."</em>
+          </div>
+          
+          <div class="psalm-verse">
+            <span class="verse-number">Jude 1:20</span> <em>"But you, dear friends, by <strong style="color: #ffd700;">building yourselves up in your most holy faith and praying in the Holy Spirit</strong>."</em>
+          </div>
+          
+          <div class="prayer-box">
+            <h3 style="color: #ff8c00; font-family: 'Cinzel', serif; margin-bottom: 1rem;">Prayer for Baptism in the Holy Spirit</h3>
+            <div class="prayer-text">
+              "Heavenly Father,<br><br>
+              I thank You for Your Son Jesus and for salvation. I now come to You asking for the baptism in the Holy Spirit. Jesus, You said that You would baptize us with the Holy Spirit and fire.<br><br>
+              I believe Your Word that says the promise is for me. Fill me now with Your Holy Spirit. I receive this gift by faith. Give me the ability to speak in tongues as the Spirit gives me utterance.<br><br>
+              Holy Spirit, I welcome You. Take control of my life. Use me for Your glory. Empower me to be a witness for Jesus Christ.<br><br>
+              Thank You for filling me with Your Spirit. In Jesus' mighty name, Amen."
+            </div>
+          </div>
+          
+          <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 69, 0, 0.1); border-radius: 15px; border: 1px solid rgba(255, 140, 0, 0.3);">
+            <h3 style="color: #ff8c00; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">How to Receive the Holy Spirit</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🙏</div>
+                <strong style="color: #ff8c00;">Ask</strong>
+                <p style="font-size: 0.9rem; margin: 0.5rem 0;">Simply ask the Father</p>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">❤️</div
