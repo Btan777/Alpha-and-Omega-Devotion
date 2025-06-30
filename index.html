@@ -23,7 +23,7 @@
       max-width: 900px;
       margin: 0 auto;
       padding: 2rem;
-      padding-top: 80px;
+      padding-top: 120px;
     }
 
     .nav-menu {
@@ -51,6 +51,7 @@
       padding: 8px 15px;
       border-radius: 20px;
       border: 1px solid transparent;
+      cursor: pointer;
     }
 
     .nav-menu a:hover, .nav-menu a.active {
@@ -220,10 +221,28 @@
       margin: 1rem 0;
     }
 
+    /* Children's devotion specific styles */
+    .children-card {
+      background: linear-gradient(135deg, rgba(255, 192, 203, 0.15), rgba(135, 206, 250, 0.15));
+      border: 2px solid rgba(255, 182, 193, 0.4);
+    }
+
+    .children-card::before {
+      background: linear-gradient(90deg, #ff69b4, #87ceeb, #98fb98, #ffd700);
+    }
+
+    .fun-activity {
+      background: rgba(255, 182, 193, 0.1);
+      padding: 1.5rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 182, 193, 0.3);
+      margin: 1rem 0;
+    }
+
     @media (max-width: 768px) {
       .container {
         padding: 1rem;
-        padding-top: 120px;
+        padding-top: 140px;
       }
       
       .nav-menu {
@@ -253,20 +272,21 @@
 </head>
 <body>
   <nav class="nav-menu">
-    <a href="#" onclick="showTab('home')" class="active">Home</a>
-    <a href="#" onclick="showTab('salvation')">Salvation Prayer</a>
-    <a href="#" onclick="showTab('holyspirit')">Holy Spirit</a>
-    <a href="#" onclick="showTab('med1')">Meditation 1</a>
-    <a href="#" onclick="showTab('med2')">Meditation 2</a>
-    <a href="#" onclick="showTab('med3')">Meditation 3</a>
-    <a href="#" onclick="showTab('med4')">Meditation 4</a>
-    <a href="#" onclick="showTab('med5')">Meditation 5</a>
-    <a href="#" onclick="showTab('med6')">Meditation 6</a>
-    <a href="#" onclick="showTab('med7')">Meditation 7</a>
-    <a href="#" onclick="showTab('psalm23')">Psalm 23</a>
-    <a href="#" onclick="showTab('healing')">Divine Healing</a>
-    <a href="#" onclick="showTab('prophecy')">Prophecy Watch</a>
-    <a href="#" onclick="showTab('evangelism')">Evangelism</a>
+    <a onclick="showTab('home')" class="active">Home</a>
+    <a onclick="showTab('children')">Kids Devotion</a>
+    <a onclick="showTab('salvation')">Salvation Prayer</a>
+    <a onclick="showTab('holyspirit')">Holy Spirit</a>
+    <a onclick="showTab('med1')">Meditation 1</a>
+    <a onclick="showTab('med2')">Meditation 2</a>
+    <a onclick="showTab('med3')">Meditation 3</a>
+    <a onclick="showTab('med4')">Meditation 4</a>
+    <a onclick="showTab('med5')">Meditation 5</a>
+    <a onclick="showTab('med6')">Meditation 6</a>
+    <a onclick="showTab('med7')">Meditation 7</a>
+    <a onclick="showTab('psalm23')">Psalm 23</a>
+    <a onclick="showTab('healing')">Divine Healing</a>
+    <a onclick="showTab('prophecy')">Prophecy Watch</a>
+    <a onclick="showTab('evangelism')">Evangelism</a>
   </nav>
 
   <div class="container">
@@ -283,7 +303,156 @@
           </div>
         </div>
         <p>Embark on a transformative journey through seven powerful meditations, each designed to deepen your connection with the Divine. From A to Z, discover the fullness of God's character and love.</p>
-        <p>Begin with salvation and the baptism of the Holy Spirit, then explore the meditations and comforting words of Psalm 23.</p>
+        <p>Begin with salvation and the baptism of the Holy Spirit, enjoy daily children's devotions, then explore the meditations and comforting words of Psalm 23.</p>
+      </div>
+    </div>
+
+    <!-- Children's Daily Devotion -->
+    <div id="children" class="tab-content">
+      <div class="meditation-card children-card">
+        <div class="meditation-header">
+          <div class="meditation-icon">🌈</div>
+          <div>
+            <h2>Daily Kids Devotion: God's Amazing Love</h2>
+          </div>
+        </div>
+        
+        <!-- Fun Characters -->
+        <div style="text-align: center; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(255, 182, 193, 0.2), rgba(135, 206, 250, 0.2)); border-radius: 20px; border: 2px solid rgba(255, 182, 193, 0.4);">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">🦁</div>
+          <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="font-size: 2rem;">🐑</div>
+            <div style="font-size: 2rem;">🕊️</div>
+            <div style="font-size: 2rem;">🐟</div>
+            <div style="font-size: 2rem;">⭐</div>
+          </div>
+          <h3 style="color: #ff69b4; font-family: 'Cinzel', serif; margin-bottom: 1rem;">Jesus Loves Me!</h3>
+          <div style="font-style: italic; color: #e6d7b8; line-height: 1.6; font-size: 1.1rem;">
+            "Let the little children come to me, and do not hinder them,<br>
+            for the kingdom of heaven belongs to such as these."<br>
+            <strong style="color: #87ceeb;">- Matthew 19:14</strong>
+          </div>
+        </div>
+        
+        <!-- Daily Bible Verse for Kids -->
+        <div class="fun-activity">
+          <h3 style="color: #ff69b4; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">📖 Today's Special Verse</h3>
+          <div style="text-align: center; font-size: 1.2rem; font-style: italic; color: #e6d7b8; padding: 1rem; background: rgba(135, 206, 250, 0.1); border-radius: 10px;">
+            <strong style="color: #87ceeb;">Psalm 139:14</strong><br>
+            "I praise you because I am fearfully and wonderfully made;<br>
+            your works are wonderful, I know that full well."
+          </div>
+          <div style="text-align: center; margin-top: 1rem;">
+            <div style="font-size: 3rem;">✨</div>
+            <p style="font-size: 1.1rem; color: #98fb98; font-weight: bold;">God made YOU special and unique!</p>
+          </div>
+        </div>
+        
+        <!-- Fun Bible Story -->
+        <div class="fun-activity">
+          <h3 style="color: #87ceeb; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">📚 Fun Bible Story: David and Goliath</h3>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+            <div style="text-align: center;">
+              <div style="font-size: 3rem; margin-bottom: 0.5rem;">👦</div>
+              <strong style="color: #98fb98;">Little David</strong>
+              <p style="font-size: 0.9rem;">A brave shepherd boy</p>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 3rem; margin-bottom: 0.5rem;">👹</div>
+              <strong style="color: #ff6347;">Giant Goliath</strong>
+              <p style="font-size: 0.9rem;">Very big and scary!</p>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 3rem; margin-bottom: 0.5rem;">🪨</div>
+              <strong style="color: #dda0dd;">5 Smooth Stones</strong>
+              <p style="font-size: 0.9rem;">David's simple weapons</p>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 3rem; margin-bottom: 0.5rem;">🙌</div>
+              <strong style="color: #ffd700;">God's Power</strong>
+              <p style="font-size: 0.9rem;">The real hero!</p>
+            </div>
+          </div>
+          
+          <div style="background: rgba(152, 251, 152, 0.1); padding: 1rem; border-radius: 10px; margin: 1rem 0;">
+            <p style="text-align: center; font-size: 1.1rem; line-height: 1.6;">
+              Even though David was just a little boy, he wasn't afraid of the giant because he knew God was with him! 
+              When we trust in God, we can be brave too! 🦁💪
+            </p>
+          </div>
+        </div>
+        
+        <!-- Prayer for Kids -->
+        <div class="prayer-box" style="background: linear-gradient(135deg, rgba(255, 182, 193, 0.15), rgba(135, 206, 250, 0.15)); border-color: rgba(255, 182, 193, 0.5);">
+          <h3 style="color: #ff69b4; font-family: 'Cinzel', serif; margin-bottom: 1rem;">🙏 Kids Prayer Time</h3>
+          <div class="prayer-text" style="font-size: 1.2rem; line-height: 1.8;">
+            "Dear God,<br><br>
+            Thank You for making me special and wonderful! Thank You for loving me so much. 
+            Help me to be brave like David and trust in You always.<br><br>
+            Help me to be kind to my friends and family. Help me to learn more about You every day. 
+            Thank You for Jesus who loves all the children.<br><br>
+            In Jesus' name, Amen! 🌟"
+          </div>
+        </div>
+        
+        <!-- Fun Activities -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
+          <div class="fun-activity">
+            <h4 style="color: #98fb98; text-align: center; margin-bottom: 1rem;">🎨 Color & Create</h4>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🖍️</div>
+              <p>Draw a picture of yourself and write "God loves me!" at the top!</p>
+            </div>
+          </div>
+          
+          <div class="fun-activity">
+            <h4 style="color: #ffd700; text-align: center; margin-bottom: 1rem;">🎵 Sing & Dance</h4>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎶</div>
+              <p>Sing "Jesus Loves Me" and dance with joy!</p>
+            </div>
+          </div>
+          
+          <div class="fun-activity">
+            <h4 style="color: #87ceeb; text-align: center; margin-bottom: 1rem;">❤️ Share Love</h4>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤗</div>
+              <p>Give someone a hug and tell them "God loves you!"</p>
+            </div>
+          </div>
+          
+          <div class="fun-activity">
+            <h4 style="color: #dda0dd; text-align: center; margin-bottom: 1rem;">⭐ Memory Game</h4>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🧠</div>
+              <p>Try to remember today's verse: "I am wonderfully made!"</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Fun Facts about God -->
+        <div style="background: rgba(255, 215, 0, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3); margin: 2rem 0;">
+          <h3 style="color: #ffd700; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">🌟 Amazing Facts About God</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌌</div>
+              <p><strong style="color: #ffd700;">God made ALL the stars!</strong><br>He knows each one by name!</p>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🐘</div>
+              <p><strong style="color: #98fb98;">God made ALL animals!</strong><br>From tiny ants to huge elephants!</p>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌈</div>
+              <p><strong style="color: #ff69b4;">God made ALL colors!</strong><br>That's why rainbows are so beautiful!</p>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">👶</div>
+              <p><strong style="color: #87ceeb;">God made YOU!</strong><br>You are His masterpiece!</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -342,14 +511,6 @@
             <span class="verse-number">Romans 10:9-10</span> <em>"If you declare with your mouth, '<strong style="color: #8a2be2;">Jesus is Lord</strong>,' and <strong style="color: #32cd32;">believe in your heart that God raised him from the dead, you will be saved</strong>. For it is with your heart that you believe and are justified, and it is with your mouth that you profess your faith and are saved."</em>
           </div>
           
-          <div class="psalm-verse">
-            <span class="verse-number">Romans 10:13</span> <em>"For <strong style="color: #ffd700;">'everyone who calls on the name of the Lord will be saved.'</strong>"</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">2 Corinthians 5:17</span> <em>"Therefore, if anyone is in Christ, <strong style="color: #32cd32;">the new creation has come: The old has gone, the new is here!</strong>"</em>
-          </div>
-          
           <div class="prayer-box">
             <h3 style="color: #ffd700; font-family: 'Cinzel', serif; margin-bottom: 1rem;">The Sinner's Prayer</h3>
             <div class="prayer-text">
@@ -358,32 +519,6 @@
               Right now, I invite Jesus Christ to come into my heart and life as my personal Lord and Savior. I surrender my life to You and ask You to take control.<br><br>
               Thank You for loving me, forgiving me, and giving me eternal life. Help me to live for You from this day forward.<br><br>
               In Jesus' precious name I pray, Amen."
-            </div>
-          </div>
-          
-          <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(32, 178, 170, 0.1); border-radius: 15px; border: 1px solid rgba(32, 178, 170, 0.3);">
-            <h3 style="color: #20b2aa; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">What Happens When You Accept Jesus?</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-              <div style="text-align: center;">
-                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🕊️</div>
-                <strong style="color: #20b2aa;">Born Again</strong>
-                <p style="font-size: 0.9rem; margin: 0.5rem 0;">You become a new creation</p>
-              </div>
-              <div style="text-align: center;">
-                <div style="font-size: 2rem; margin-bottom: 0.5rem;">👑</div>
-                <strong style="color: #20b2aa;">Child of God</strong>
-                <p style="font-size: 0.9rem; margin: 0.5rem 0;">Adopted into God's family</p>
-              </div>
-              <div style="text-align: center;">
-                <div style="font-size: 2rem; margin-bottom: 0.5rem;">∞</div>
-                <strong style="color: #20b2aa;">Eternal Life</strong>
-                <p style="font-size: 0.9rem; margin: 0.5rem 0;">Promise of heaven</p>
-              </div>
-              <div style="text-align: center;">
-                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🛡️</div>
-                <strong style="color: #20b2aa;">Forgiveness</strong>
-                <p style="font-size: 0.9rem; margin: 0.5rem 0;">All sins washed away</p>
-              </div>
             </div>
           </div>
         </div>
@@ -418,91 +553,17 @@
           </div>
         </div>
         
-        <!-- Gifts of the Spirit Illustrations -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 2rem 0;">
-          <div style="background: rgba(255, 215, 0, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🗣️</div>
-            <strong style="color: #ffd700;">Speaking in Tongues</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Prayer Language</p>
-          </div>
-          <div style="background: rgba(138, 43, 226, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(138, 43, 226, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔮</div>
-            <strong style="color: #8a2be2;">Prophecy</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Divine Messages</p>
-          </div>
-          <div style="background: rgba(50, 205, 50, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(50, 205, 50, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⚡</div>
-            <strong style="color: #32cd32;">Divine Power</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Supernatural Ability</p>
-          </div>
-          <div style="background: rgba(255, 20, 147, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 20, 147, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🤲</div>
-            <strong style="color: #ff1493;">Healing</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Miraculous Recovery</p>
-          </div>
-          <div style="background: rgba(30, 144, 255, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(30, 144, 255, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">👁️</div>
-            <strong style="color: #1e90ff;">Discernment</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Spiritual Insight</p>
-          </div>
-          <div style="background: rgba(255, 140, 0, 0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 140, 0, 0.3); text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💪</div>
-            <strong style="color: #ff8c00;">Boldness</strong>
-            <p style="font-size: 0.9rem; margin: 0.5rem 0; color: #e6d7b8;">Fearless Witness</p>
-          </div>
-        </div>
-        
         <div class="psalm-content">
           <div class="psalm-verse">
             <span class="verse-number">Acts 1:8</span> <em>"But you will receive <strong style="color: #ff8c00;">power when the Holy Spirit comes on you</strong>; and you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth."</em>
           </div>
           
           <div class="psalm-verse">
-            <span class="verse-number">Acts 2:38-39</span> <em>"Peter replied, 'Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins. And <strong style="color: #ffd700;">you will receive the gift of the Holy Spirit</strong>. <strong style="color: #32cd32;">The promise is for you and your children and for all who are far off</strong>—for all whom the Lord our God will call.'"</em>
-          </div>
-          
-          <div class="psalm-verse">
             <span class="verse-number">Luke 11:13</span> <em>"If you then, though you are evil, know how to give good gifts to your children, <strong style="color: #ffd700;">how much more will your Father in heaven give the Holy Spirit to those who ask him!</strong>"</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">1 Corinthians 12:7-11</span> <em>"Now to each one <strong style="color: #8a2be2;">the manifestation of the Spirit is given for the common good</strong>. To one there is given through the Spirit a message of wisdom, to another a message of knowledge... to another speaking in different kinds of tongues, and to still another the interpretation of tongues. <strong style="color: #ff8c00;">All these are the work of one and the same Spirit</strong>."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Acts 19:2-6</span> <em>"He asked them, 'Did you receive the Holy Spirit when you believed?' They answered, 'No, we have not even heard that there is a Holy Spirit.'... <strong style="color: #ffd700;">When Paul placed his hands on them, the Holy Spirit came on them, and they spoke in tongues and prophesied</strong>."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Romans 8:26</span> <em>"In the same way, <strong style="color: #ffd700;">the Spirit helps us in our weakness. We do not know what we ought to pray for, but the Spirit himself intercedes for us through wordless groans</strong>."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Ephesians 6:18</span> <em>"And <strong style="color: #ffd700;">pray in the Spirit on all occasions with all kinds of prayers and requests</strong>. With this in mind, be alert and always keep on praying for all the Lord's people."</em>
-          </div>
-          
-          <div class="psalm-verse">
-            <span class="verse-number">Jude 1:20</span> <em>"But you, dear friends, by <strong style="color: #ffd700;">building yourselves up in your most holy faith and praying in the Holy Spirit</strong>."</em>
           </div>
           
           <div class="prayer-box">
             <h3 style="color: #ff8c00; font-family: 'Cinzel', serif; margin-bottom: 1rem;">Prayer for Baptism in the Holy Spirit</h3>
             <div class="prayer-text">
               "Heavenly Father,<br><br>
-              I thank You for Your Son Jesus and for salvation. I now come to You asking for the baptism in the Holy Spirit. Jesus, You said that You would baptize us with the Holy Spirit and fire.<br><br>
-              I believe Your Word that says the promise is for me. Fill me now with Your Holy Spirit. I receive this gift by faith. Give me the ability to speak in tongues as the Spirit gives me utterance.<br><br>
-              Holy Spirit, I welcome You. Take control of my life. Use me for Your glory. Empower me to be a witness for Jesus Christ.<br><br>
-              Thank You for filling me with Your Spirit. In Jesus' mighty name, Amen."
-            </div>
-          </div>
-          
-          <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 69, 0, 0.1); border-radius: 15px; border: 1px solid rgba(255, 140, 0, 0.3);">
-            <h3 style="color: #ff8c00; font-family: 'Cinzel', serif; text-align: center; margin-bottom: 1rem;">How to Receive the Holy Spirit</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-              <div style="text-align: center;">
-                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🙏</div>
-                <strong style="color: #ff8c00;">Ask</strong>
-                <p style="font-size: 0.9rem; margin: 0.5rem 0;">Simply ask the Father</p>
-              </div>
-              <div style="text-align: center;">
-                <div style="font-size: 2rem; margin-bottom: 0.5rem;">❤️</div
+              I thank You for Your Son Jesus and for
